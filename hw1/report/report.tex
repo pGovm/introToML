@@ -17,5 +17,11 @@
     \Huge\textbf{Hw 1: Report}
 \end{center}
 
+\section{Learning Rate:}
+The learning rate directly controlled how aggressively the weights were updated at each iteration. In Problem 1, X1 used $\alpha$ = 0.05 while X2 and X3 used $\alpha$ = 0.1. The higher learning rate produced slightly faster convergence. X2 and X3 plateaued by roughly iteration 100, while X1 took until approximately iteration 175. Crucially, neither rate caused oscillation or divergence, indicating both were conservative enough to descend stably toward the minimum. In Problem 2, $\alpha$ = 0.1 again proved effective, driving the cost from roughly 4.1 down to a final loss of 0.738 with a smooth, monotonically decreasing curve. Across all models, the learning rate determined the speed of convergence but not the final loss value. The minimum is set by the loss surface of the data, not by $\alpha$.
+
+\section{Number of Iterations:}
+
+All models were run for 2000 iterations, but the cost curves show that meaningful learning had effectively stopped well before that point. In the single-variable models, the cost flattened by roughly iteration 250 to 300, meaning the remaining ~1700 iterations produced negligible improvement. The same pattern held for the multi-variable model in Problem 2, which converged by approximately iteration 200. This illustrates the law of diminishing returns in gradient descent: early iterations account for the vast majority of loss reduction, while later iterations serve mainly as confirmation that the model has settled. In practice, an early stopping criterion — such as halting when the change in cost between iterations falls below a small threshold (e.g. $1*10^{-6}$) — would have reached the same final weights in a fraction of the 2000 iterations.
 
 \end{document}
