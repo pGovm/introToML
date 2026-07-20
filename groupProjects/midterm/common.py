@@ -41,7 +41,7 @@ def load_cancer_ds():
     feature_names = breast_cancer_ds.feature_names
 
     # Resulting class names
-    class_names = ["Malignant", "Benign"]
+    class_names = ["Benign", "Malignant"]
 
     return x, y, class_names, feature_names
 
